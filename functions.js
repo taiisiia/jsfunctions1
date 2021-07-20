@@ -47,30 +47,37 @@ function calcSum (num) {
     /* 5 */
 
     function isDivisible (num3,num4) {
-        if ((typeof num3!=="number" || typeof num3!=="string") && 
-        (typeof num4!=="number" || typeof num4!=="string")) {
+        
+        if (
+            !["number", "string"].includes(typeof num3)
+            ||
+            !["number", "string"].includes(typeof num4)
+        )   {
             return null;
         }
-            
+       
         return num3%num4===0;
     }
-        console.log (isDivisible(8, 4))
+        console.log (isDivisible('8', 4))
        
    /* 6 */ 
     
     function calcPower (num5,num6) {
-        if ((typeof num5!=="number" || typeof num5!=="string") 
-        && (typeof num6!=="number" || typeof num6!=="string")){
-            return null;   
-    }
+        if (
+            !["number", "string"].includes(typeof num5)
+            ||
+            !["number", "string"].includes(typeof num6)
+        )   {
+            return null;
+        }
     return Math.pow (num5,num6);
     }
-    console.log (calcPower(5, 2));
+    console.log (calcPower('5', 2));
 
     /* 7 */
 
     /**
-     * 
+     * Calculates area of parallelepiped using the following formula: 2*(a*b+b*c+a*c).
      * @param {number} - length of side a
      * @param {number} - length of side b
      * @param {number} - length of side c
@@ -86,10 +93,10 @@ function calcSum (num) {
     /* 8 */
 
     /**
-     * 
+     * Calculates two numbers based on the operation of user's choice
      * @param {number} num7 - fisrt number 
      * @param {number} num8 - second number 
-     * @param {string} operator - choose an operator 
+     * @param {string} operator - choose an operator: + - * / 
      * @returns {number} - result of a chosen operation
      */
 
